@@ -522,7 +522,7 @@ public class DeployFileMojo
         Writer fw = null;
         try
         {
-            File tempFile = File.createTempFile( "mvndeploy", ".pom" );
+            File tempFile = Files.createTempFile( "mvndeploy", ".pom" ).toFile();
             tempFile.deleteOnExit();
 
             fw = WriterFactory.newXmlWriter( tempFile );
